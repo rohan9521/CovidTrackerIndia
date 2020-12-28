@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/newnavigation"
+    app:startDestination="@id/dataMain2">
+    <fragment
+        android:id="@+id/dataMain2"
+        android:name="com.example.trackercovid.DataMain"
+        android:label="fragment_data_main"
+        tools:layout="@layout/fragment_data_main" >
+        <action
+            android:id="@+id/action_dataMain2_to_dataDistrict3"
+            app:destination="@id/dataDistrict3" />
+    </fragment>
+    <fragment
+        android:id="@+id/dataDistrict3"
+        android:name="com.example.trackercovid.DataDistrict"
+        android:label="fragment_data_district"
+        tools:layout="@layout/fragment_data_district" >
+        <argument
+            android:name="data_district"
+            app:argType="com.example.trackercovid.CovidDataDistrict[]" />
+        <argument
+            android:name="state_name"
+            app:argType="string" />
+    </fragment>
+</navigation>
